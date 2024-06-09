@@ -17,7 +17,7 @@ RUN apt-get update && \
     apt-get autoclean && \
     apt-get autoremove
 
-RUN useradd -m ttyjs -s /bin/zsh && echo "ttyjs:docker" | chpasswd && adduser ttyjs sudo
+RUN useradd -u 10002 -m ttyjs -s /bin/zsh && echo "ttyjs:ajays" | chpasswd && adduser ttyjs sudo
 
 RUN npm update && \
     npm install -g tty.js && \
@@ -25,7 +25,7 @@ RUN npm update && \
 
 COPY /static/ /usr/local/lib/node_modules/tty.js/static
 
-USER ttyjs
+USER 10002
 
 WORKDIR /home/ttyjs
 
