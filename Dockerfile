@@ -1,6 +1,11 @@
 from wettyoss/wetty
 
+# add new user ajays in alpine
+RUN adduer -u 10002 -D ajays && echo "ajays:ajays" | chpasswd && adduser ajays sudo
+
 EXPOSE 3000
+
+USER 10002
 
 CMD [ "pnpm", "start" ]
 
