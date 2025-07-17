@@ -1,7 +1,7 @@
 from wettyoss/wetty
 
 # add new user ajays in alpine
-RUN adduser -u 10002 -D ajays && echo "ajays:ajays" | chpasswd && adduser ajays sudo
+RUN adduser -u 10002 -D ajays && echo "ajays:ajays" | chpasswd
 
 EXPOSE 3000
 
